@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Registration</title>
+    <link rel="stylesheet" href="book.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Travel Registration</h1>
+
+    <form id="registerForm">
+
+        <input type="text" id="name"
+               placeholder="Full Name" required>
+
+        <input type="number" id="age"
+               placeholder="Age" required>
+
+        <input type="tel" id="mobile"
+               placeholder="Mobile Number" required>
+
+        <input type="email" id="email"
+               placeholder="Email ID" required>
+
+        <select id="place" required>
+            <option value="">Select Destination</option>
+            <option>Maldives</option>
+            <option>Bali</option>
+            <option>Switzerland</option>
+            <option>Dubai</option>
+            <option>Goa</option>
+        </select>
+
+        <input type="number" id="members"
+               placeholder="Number of Members" required>
+
+        <input type="date" id="travelDate"
+               required>
+
+      
+
+        <button type="submit">
+            Book Trip
+        </button>
+
+    </form>
+
+</div>
+
+<script src="book.js"></script>
+
+</body>
+</html>

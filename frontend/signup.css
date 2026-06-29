@@ -1,0 +1,187 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #1e293b,
+                    #2563eb
+            );
+}
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.signup-box{
+
+    width:400px;
+
+    background:rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    color:white;
+
+    box-shadow:
+            0 8px 32px rgba(0,0,0,0.3);
+
+    animation:fadeIn 1s ease;
+}
+
+.signup-box h1{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.signup-box p{
+    text-align:center;
+    margin-bottom:25px;
+    color:#dbeafe;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+
+    border:none;
+    outline:none;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,0.15);
+
+    color:white;
+}
+
+input::placeholder{
+    color:#e5e7eb;
+}
+
+.signup-btn{
+    width:100%;
+    padding:14px;
+
+    border:none;
+    border-radius:10px;
+
+    background:#2563eb;
+    color:white;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.signup-btn:hover{
+    transform:translateY(-3px);
+}
+
+.divider{
+    text-align:center;
+    margin:25px 0;
+    position:relative;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    position:absolute;
+    width:40%;
+    height:1px;
+    background:white;
+    top:50%;
+}
+
+.divider::before{
+    left:0;
+}
+
+.divider::after{
+    right:0;
+}
+
+.google-btn,
+.microsoft-btn{
+
+    width:100%;
+    padding:12px;
+
+    margin-bottom:12px;
+
+    border:none;
+    border-radius:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.google-btn{
+    background:white;
+    color:black;
+}
+
+.microsoft-btn{
+    background:#0078D4;
+    color:white;
+}
+
+.google-btn img,
+.microsoft-btn img{
+    width:22px;
+}
+
+.google-btn:hover,
+.microsoft-btn:hover{
+    transform:translateY(-3px);
+}
+
+.login-link{
+    text-align:center;
+    margin-top:20px;
+}
+
+.login-link a{
+    color:#60a5fa;
+    text-decoration:none;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
