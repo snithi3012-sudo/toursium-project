@@ -1,50 +1,50 @@
 document
-.getElementById("signupForm")
-.addEventListener("submit", function(e){
+    .getElementById("signupForm")
+    .addEventListener("submit", function(e){
 
-    e.preventDefault();
+        e.preventDefault();
 
-    const user = {
+        const user = {
 
-        name:
-        document.getElementById("name").value,
+            name:
+            document.getElementById("name").value,
 
-        email:
-        document.getElementById("email").value,
+            email:
+            document.getElementById("email").value,
 
-        password:
-        document.getElementById("password").value
-    };
+            password:
+            document.getElementById("password").value
+        };
 
-    fetch(
-        "http://localhost:8080/signup/save",
-        {
-            method:"POST",
+        fetch(
+            "https://toursium-project-production.up.railway.app/signup/save",
+            {
+                method:"POST",
 
-            headers:{
-                "Content-Type":"application/json"
-            },
+                headers:{
+                    "Content-Type":"application/json"
+                },
 
-            body:JSON.stringify(user)
-        }
-    )
+                body:JSON.stringify(user)
+            }
+        )
 
-    .then(response => response.text())
+            .then(response => response.text())
 
-    .then(data => {
+            .then(data => {
 
-        alert(data);
+                alert(data);
 
-        document
-        .getElementById("signupForm")
-        .reset();
-    })
+                document
+                    .getElementById("signupForm")
+                    .reset();
+            })
 
-    .catch(error => {
+            .catch(error => {
 
-        console.error(error);
+                console.error(error);
 
-        alert("Registration Failed");
+                alert("Registration Failed");
+            });
+
     });
-
-});

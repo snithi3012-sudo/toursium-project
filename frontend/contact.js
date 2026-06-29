@@ -1,40 +1,40 @@
 document.getElementById("contactForm")
-.addEventListener("submit", async function(e){
+    .addEventListener("submit", async function(e){
 
-    e.preventDefault();
+        e.preventDefault();
 
-    const contact = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        subject: document.getElementById("subject").value,
-        message: document.getElementById("message").value
-    };
+        const contact = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value
+        };
 
-    try {
+        try {
 
-        const response = await fetch(
-            "http://localhost:8080/contact/send",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(contact)
-            }
-        );
+            const response = await fetch(
+                "https://toursium-project-production.up.railway.app/contact/send",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(contact)
+                }
+            );
 
-        const result = await response.text();
+            const result = await response.text();
 
-        document.getElementById("successMsg").innerHTML =
-            "✅ " + result;
+            document.getElementById("successMsg").innerHTML =
+                "✅ " + result;
 
-        document.getElementById("contactForm").reset();
+            document.getElementById("contactForm").reset();
 
-    } catch(error) {
+        } catch(error) {
 
-        document.getElementById("successMsg").innerHTML =
-            "❌ Failed to send message";
+            document.getElementById("successMsg").innerHTML =
+                "❌ Failed to send message";
 
-        console.error(error);
-    }
-});
+            console.error(error);
+        }
+    });

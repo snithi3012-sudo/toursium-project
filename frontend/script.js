@@ -3,21 +3,21 @@ function login() {
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
 
-    fetch("http://localhost:8080/Login/register", {
+    fetch("https://toursium-project-production.up.railway.app/Login/register", {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
         },
         body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
     })
-    .then(response => response.text())
-    .then(data => {
-        alert(data);
-    })
-    .catch(error => {
-        console.error("Error:", error);
-        alert("Failed to connect to backend");
-    });
+        .then(response => response.text())
+        .then(data => {
+            alert(data);
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("Failed to connect to backend");
+        });
 }
 const slides = document.querySelectorAll(".slide");
 const next = document.getElementById("next");
@@ -58,16 +58,16 @@ prev.addEventListener("click",()=>{
 
 showSlide(current);
 document.getElementById("contactForm")
-.addEventListener("submit", function(e){
+    .addEventListener("submit", function(e){
 
-    e.preventDefault();
+        e.preventDefault();
 
-    document.getElementById("successMsg").innerHTML =
-        "✅ Message Sent Successfully!";
+        document.getElementById("successMsg").innerHTML =
+            "✅ Message Sent Successfully!";
 
-    document.getElementById("successMsg").style.color = "#00ff66";
-    document.getElementById("successMsg").style.fontWeight = "bold";
-    document.getElementById("successMsg").style.marginTop = "15px";
+        document.getElementById("successMsg").style.color = "#00ff66";
+        document.getElementById("successMsg").style.fontWeight = "bold";
+        document.getElementById("successMsg").style.marginTop = "15px";
 
-    document.getElementById("contactForm").reset();
-});
+        document.getElementById("contactForm").reset();
+    });

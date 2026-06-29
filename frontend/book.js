@@ -14,7 +14,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
 
     try {
 
-        const response = await fetch("http://localhost:8080/travel/book", {
+        const response = await fetch("https://toursium-project-production.up.railway.app/travel/book", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
